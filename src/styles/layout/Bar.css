@@ -1,0 +1,71 @@
+.customBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px; /* macOS 标准标题栏高度 */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  user-select: none;
+  -webkit-user-select: none;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  cursor: default;
+}
+
+.barRow {
+  height: 100%;
+  padding: 0 16px;
+  /* 为 macOS 原生窗口控制按钮留出空间 */
+  padding-left: 78px !important;
+}
+
+.barLeftCol {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.barIcon {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.barTitle {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.barLeftContent {
+  display: flex;
+  align-items: center;
+}
+
+.barCenterCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.barRightCol {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 交互元素样式 */
+.customBar button,
+.customBar a,
+.customBar .ant-btn {
+  cursor: pointer;
+}
+
+.customBar input,
+.customBar .ant-input,
+.customBar .ant-input-affix-wrapper {
+  cursor: text;
+}

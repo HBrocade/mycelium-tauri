@@ -1,0 +1,193 @@
+/* Sidebar 包装器 */
+.sidebar-wrapper {
+  position: relative;
+  display: flex;
+}
+
+/* 自定义 Sider 动画时长 */
+.ant-layout-sider {
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* 拖拽时禁用过渡动画，提升响应速度 */
+.sidebar-wrapper.resizing .ant-layout-sider {
+  transition: none !important;
+}
+
+/* Sidebar 内容容器 */
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* 拖拽调整宽度的把手 */
+.sidebar-resize-handle {
+  position: absolute;
+  right: -3px;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  cursor: ew-resize;
+  background-color: transparent;
+  transition: background-color 0.1s;
+  z-index: 10;
+}
+
+.sidebar-resize-handle:hover,
+.sidebar-resize-handle.resizing {
+  background-color: #1890ff;
+}
+
+/* 扩大可点击区域 */
+.sidebar-resize-handle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -4px;
+  right: -4px;
+}
+
+/* 顶部内容区域 */
+.sidebar-header {
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  flex-shrink: 0;
+  min-height: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  overflow: hidden;
+}
+
+.ant-layout-sider-dark .sidebar-header {
+  border-bottom-color: #002140;
+}
+
+/* header 内的 Space 组件 */
+.sidebar-header .ant-space {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Space item 动画 - 只动画透明度和位移 */
+.sidebar-header .ant-space-item:first-child {
+  flex-shrink: 0;
+  transition: none;
+}
+
+.sidebar-header .ant-space-item:not(:first-child) {
+  flex: 1;
+  min-width: 0;
+  transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+  transform: translateX(0);
+  overflow: hidden;
+}
+
+/* 用户信息文字溢出省略 */
+.sidebar-header .ant-typography {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* 折叠状态下的 header */
+.ant-layout-sider-collapsed .sidebar-header {
+  padding: 16px;
+  justify-content: center;
+}
+
+/* 隐藏折叠状态下的用户信息文字 */
+.ant-layout-sider-collapsed .sidebar-header .ant-space {
+  justify-content: center;
+}
+
+.ant-layout-sider-collapsed .sidebar-header .ant-space-item:not(:first-child) {
+  opacity: 0;
+  transform: translateX(-10px);
+  position: absolute;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* 菜单区域 */
+.sidebar-menu-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* 菜单项动画优化 */
+.sidebar-menu-wrapper .ant-menu {
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-menu-wrapper .ant-menu-item,
+.sidebar-menu-wrapper .ant-menu-submenu {
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 菜单文字渐隐效果和溢出省略 */
+.sidebar-menu-wrapper .ant-menu-title-content {
+  transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 修复折叠时菜单的形变问题 */
+.ant-layout-sider-collapsed .sidebar-menu-wrapper .ant-menu {
+  width: 100%;
+}
+
+.ant-layout-sider-collapsed .sidebar-menu-wrapper .ant-menu-item {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ant-layout-sider-collapsed .sidebar-menu-wrapper .ant-menu-item .anticon {
+  margin: 0 !important;
+}
+
+/* 自定义滚动条样式 */
+.sidebar-menu-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-menu-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.sidebar-menu-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.ant-layout-sider-dark .sidebar-menu-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.ant-layout-sider-dark .sidebar-menu-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* 底部内容区域 */
+.sidebar-footer {
+  padding: 16px;
+  border-top: 1px solid #f0f0f0;
+  flex-shrink: 0;
+}
+
+.ant-layout-sider-dark .sidebar-footer {
+  border-top-color: #002140;
+}

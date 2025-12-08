@@ -36,7 +36,7 @@
 
 .sidebar-resize-handle:hover,
 .sidebar-resize-handle.resizing {
-  background-color: #1890ff;
+  background-color: #9a8a7a;
 }
 
 /* 扩大可点击区域 */
@@ -52,7 +52,7 @@
 /* 顶部内容区域 */
 .sidebar-header {
   padding: 16px;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid #e8e8e0;
   flex-shrink: 0;
   min-height: 80px;
   height: 80px;
@@ -64,7 +64,7 @@
 }
 
 .ant-layout-sider-dark .sidebar-header {
-  border-bottom-color: #002140;
+  border-bottom-color: #4a3a2a;
 }
 
 /* header 内的 Space 组件 */
@@ -184,10 +184,65 @@
 /* 底部内容区域 */
 .sidebar-footer {
   padding: 16px;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid #e8e8e0;
   flex-shrink: 0;
 }
 
 .ant-layout-sider-dark .sidebar-footer {
-  border-top-color: #002140;
+  border-top-color: #4a3a2a;
+}
+
+/* 自定义菜单配色 - 菌丝灰白色调 */
+.sidebar-menu-wrapper .ant-menu-light.ant-menu-root.ant-menu-inline {
+  background-color: transparent;
+}
+
+/* 菜单项默认状态 */
+.sidebar-menu-wrapper .ant-menu-light .ant-menu-item {
+  color: #5a4a3a;
+}
+
+/* 菜单项悬停状态 */
+.sidebar-menu-wrapper .ant-menu-light .ant-menu-item:hover,
+.sidebar-menu-wrapper .ant-menu-light .ant-menu-submenu-title:hover {
+  background-color: #f0f0e8;
+  color: #5a4a3a;
+}
+
+/* 菜单项选中状态 */
+.sidebar-menu-wrapper .ant-menu-light .ant-menu-item-selected {
+  background-color: #e8e8e0;
+  color: #5a4a3a;
+}
+
+/* 菜单项选中后的边框/指示器 */
+.sidebar-menu-wrapper .ant-menu-light .ant-menu-item-selected::after {
+  border-right-color: #9a8a7a;
+}
+
+/* 菜单项激活状态 */
+.sidebar-menu-wrapper .ant-menu-light .ant-menu-item-active,
+.sidebar-menu-wrapper .ant-menu-light .ant-menu-submenu-active .ant-menu-submenu-title {
+  background-color: #f0f0e8;
+  color: #5a4a3a;
+}
+
+/* 子菜单标题 */
+.sidebar-menu-wrapper .ant-menu-light .ant-menu-submenu-title {
+  color: #5a4a3a;
+}
+
+/* 图标颜色 */
+.sidebar-menu-wrapper .ant-menu-light .ant-menu-item .anticon,
+.sidebar-menu-wrapper .ant-menu-light .ant-menu-submenu-title .anticon {
+  color: #7a6a5a;
+}
+
+.sidebar-menu-wrapper .ant-menu-light .ant-menu-item-selected .anticon {
+  color: #5a4a3a;
+}
+
+/* 移除默认的蓝色高亮 */
+.sidebar-menu-wrapper .ant-menu-light .ant-menu-item:not(.ant-menu-item-selected):active {
+  background-color: #e8e8e0;
 }

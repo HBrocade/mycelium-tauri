@@ -4,12 +4,12 @@
   left: 0;
   right: 0;
   height: 30px; /* macOS 标准标题栏高度 */
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, #e8e8e0 0%, #d8d8d0 100%);
+  color: #5a4a3a;
   user-select: none;
   -webkit-user-select: none;
   z-index: 9999;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(90, 74, 58, 0.06);
   backdrop-filter: blur(10px);
   cursor: default;
 }

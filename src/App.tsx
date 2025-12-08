@@ -78,13 +78,25 @@ function App() {
                 icon={<UserOutlined />}
                 onClick={toggle}
                 style={{
-                  backgroundColor: '#1890ff',
+                  backgroundColor: '#9a8a7a',
                   flexShrink: 0,
                   cursor: 'pointer'
                 }}
               />
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <Text strong style={{ display: 'block', fontSize: '16px' }}>
+              <div
+                style={{
+                  flex: 1,
+                  minWidth: 0
+                }}
+              // onClick={() => console.log('hello')}
+              >
+                <Text
+                  strong
+                  style={{
+                    display: 'block',
+                    fontSize: '16px'
+                  }}
+                >
                   {/* 用户名称 */}
                   {showUserInfo?.name}
                 </Text>
@@ -102,6 +114,7 @@ function App() {
             flex: 1,
             overflow: 'auto',
             padding: '20px',
+            backgroundColor: '#fafaf8'
           }}
         >
           {/* 主内容区域 */}
